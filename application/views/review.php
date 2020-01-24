@@ -2,7 +2,7 @@
 <html>
 <head>
 	<!--Link in a stylesheet to CodeIgniter-->
- 	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>application/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>application/css/bootstrap.css">
 	<title>home Page</title>
 
 </head>
@@ -12,22 +12,23 @@
 <! --- Navigation --->
 <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
 	<div class="container-fluid">
-	 <a class="navbar-brand"><img class="logo" src="<?php echo base_url();?>application/Images/xbox.png">
-			</a>
+		<a class="navbar-brand"><img class="logo" src="<?php echo base_url();?>application/Images/xbox.png">
+		</a>
 		<button class ="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" >
 			<span class="navbar-toggler-icon"></span>
 		</button>
 		<div class ="collapse navbar-collapse" id="navbarResponsive">
 			<ul class="navbar-nav ml-auto">
 				<li class="nav-item">
-					<a class ="nav-link" a href="<?php echo base_url();?>index.php">About</a>
+					<a class ="nav-link" a href="<?php echo base_url();?>index.php/review">Review</a>
 				</li>
 				<li class="nav-item">
-					<a class ="nav-link"a href="<?php echo base_url();?>index.php/login">Login</a>
+					<a class ="nav-link"a href="<?php echo base_url();?>index.php/account">Account</a>
 				</li>
 				<li class="nav-item">
-					<a class ="nav-link"a href="<?php echo base_url();?>index.php/register">Register</a>
+					<a <?php echo anchor('Login/logout', 'Logout'); ?>Logout</a>
 				</li>
+
 			</ul>
 		</div>
 	</div>
@@ -63,7 +64,7 @@
 		</div>
 		<div class="col-xs-12 col-md-4">
 			<img src="<?php echo base_url();?>application/Images/nintendo.png">
- 			<h3>Nintendo Switch</h3>
+			<h3>Nintendo Switch</h3>
 			<p>This was made by Nintendo </p>
 		</div>
 
@@ -125,13 +126,13 @@
 
 		<! --- chat room--->
 		<hr>
- 		<div container-fluid>
+		<div container-fluid>
 			<div class="row jumbotron">
 				<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-10">
 					<p class="lead">To chat about the latest upcoming games in a chat room
-					click on the chat button on the right hand side which will automatically
-					take you to the directed page,
-					 where you can  go and  talk about the latest game and give an honest review about the game</p>
+						click on the chat button on the right hand side which will automatically
+						take you to the directed page,
+						where you can  go and  talk about the latest game and give an honest review about the game</p>
 				</div>
 				<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xl-2" class="btn btn-outline-secondary btn-lg">
 					<a href="#"><button type="button" class="btn btn-outline-secondary btn-lg">Chat room</button></a>
@@ -167,7 +168,7 @@
 		</div>
 
 
-	<!-- footer -->
+		<!-- footer -->
 		<footer>
 			<div class="container">
 				<div class="row">
@@ -190,7 +191,7 @@
 						</div>
 
 					</div>
-			</div>
+				</div>
 
 		</footer>
 

@@ -23,26 +23,47 @@ class Register extends CI_Controller
 	}
 
 
-	public function insert()
-	{
-		$this->Register_Model->insert_user();
-		$this->load->view('login');
-
-	}
+//	public function insert()
+//	{
+//		$this->Register_Model->insert_user();
+//		$this->load->view('login');
+//
+//	}
 
 	public function auto_insert()
 	{
-		$data['username'] = $this->input->post('username');
-		$data['password'] = $this->input->post('password');
-		$data['telephone'] = $this->input->post('telephone');
-		$data['email'] = $this->input->post('email');
-		$data['dob'] = $this->input->post('dob');
-		$data['firstname'] = $this->input->post('first_name');
-		$data['lastname'] = $this->input->post('last_name');
+		$username = $data['username'] = $this->input->post('username');
+		$password = $data['password'] = $this->input->post('password');
+		$telephone = $data['telephone'] = $this->input->post('telephone');
+		$email = $data['email'] = $this->input->post('email');
+		$dob = $data['dob'] = $this->input->post('dob');
+		$firstname = $data['firstname'] = $this->input->post('first_name');
+		$lastname = $data['lastname'] = $this->input->post('last_name');
+
+
 
 		$this->Register_Model->insert_user($data);
 
-		$this->load->view('successful_sign_up');
+		$userDetails= array(
+			'username'  => $username,
+			'password' => $password,
+			'telephone'  => $telephone,
+			'email'  => $email,
+			'dob'  => $dob,
+			'firstname'  => $firstname,
+			'lastname'  => $lastname,
+		);
+
+		$this->session->set_userdata($userDetails);
+
+		$this->load->view('login');
+
+		//store data in a session
+
+
+
+
+
 	}
 
 	public function select(){

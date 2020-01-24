@@ -72,21 +72,44 @@
 
 
 		 if ($user  == null) {
-			 //declaring session
+
 			 $this->load->view('login');
 			 echo "<h2>Your Account is Invalid</h2>";
 
  		 } else {
-			 $this->load->view('admin');
+			 //create session
+			 // set the session to the UserName
+			 // See how to put the session in the view
+//			 $this->session->set_userdata('username');
+			 $newdata = array(
+				 'username'  => $username,
+
+			 );
+
+
+
+			 $this->session->set_userdata($newdata);
+
+
+
+			 $this->load->view('account');
 
 		 }
 	 }
 
 	 public function logout()
 	 {
+
 		 //removing session
-//		 $this->session->unset_userdata('user');
+		 $this->session->unset_userdata($newdata);
 		 redirect("login");
+	 }
+
+	 public function AccountPage()
+	 {
+	 	//create session to get all the details for account page
+		// load the account page
+		// set the account page data in view file
 	 }
 
 

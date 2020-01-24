@@ -55,10 +55,13 @@ $route['furtherinformation'] = 'Home/further_information';
 $route['login'] = 'Login/loginPage';
 $route['home'] = 'Home/aboutPage';
 $route['register'] = 'Register/registerPage';
-$route['insert'] = 'Register/insert';
+//$route['insert'] = 'Register/insert';
 $route['insert_users'] = 'Register/auto_insert';
 $route['select'] = 'Home/select';
 $route['checkLogin'] = 'Login/checkLogin';
+$route['account'] = 'Account/accountPage';
+$route['review'] = 'Review/reviewPage';
+
 $route['logOut'] = 'Login/logOut';
 $route['buttons/:any'] = 'Home/buttons';
 $route['404_override'] = '';

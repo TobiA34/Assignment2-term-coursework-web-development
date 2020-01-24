@@ -30,9 +30,7 @@
 				<li class="nav-item">
 					<a class ="nav-link"a href="<?php echo base_url();?>index.php/register">Register</a>
 				</li>
-				<li class="nav-item">
-					<a class ="nav-link"a href="<?php echo base_url();?>index.php">Account</a>
-				</li>
+
 			</ul>
 		</div>
 	</div>
