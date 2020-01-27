@@ -4,6 +4,7 @@
 	<!--Link in a stylesheet to CodeIgniter-->
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>application/css/bootstrap.css">
 	<title>home Page</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
 </head>
 <body>
@@ -28,7 +29,16 @@
 				<li class="nav-item">
 					<a <?php echo anchor('Login/logout', 'Logout'); ?>Logout</a>
 				</li>
+				<li>
+					<div id="search bar">
+					<form> <label class="bg-dark">search</label> <input type="text"  v-model="search" placeholder="Search games"> <input type="submit"></form>
+					</div>
+				</li>
 
+
+				<li>
+
+				</li>
 			</ul>
 		</div>
 	</div>
@@ -50,7 +60,7 @@
 
 
 <!--- container2 --->
-<div class="container-fluid padding">
+ <div class="container-fluid padding">
 	<div class="row text-center padding">
 		<div class="col-xs-12 col-sm-6 col-md-4">
 			<img src="<?php echo base_url();?>application/Images/ps4.png">
@@ -71,8 +81,7 @@
 	</div>
 
 </div>
-
-<hr>
+ <hr>
 <!--- container3 --->
 
 <!--- Latest game reviews -->
@@ -87,42 +96,30 @@
 </div>
 
 <!--- Cards -->
-<div class="container-fluid padding ">
-	<div class="row padding">
-		<div class="col-md-4">
-			<div class="card">
-				<img class="imd-top" src="<?php echo base_url();?>application/Images/xbox.png">
-				<div class="card-body">
-					<h4 class="card-title">Review1</h4>
-					<p class="card-text">Get text from database</p>
-					<a href="#" class="btn btn-outline-secondary">See review</a>
+<div id="app">
+ 		<div class="container-fluid padding ">
+				<div class="row padding">
+				<div class="col-md-4 mb-5" v-for="(games, index) in gameReviews" :key="index">
+
+					<div class="card text-center ml-9">
+						<img class="card-img-top" :src="games.image" alt="" width="100%">
+						<div class="card-block">
+							<h4 class="card-title mt-5">{{ games.name }}</h4>
+							<p class="card-text p-3">{{ games.information }}</p>
+							<p class="card-text p-3">{{ games.console }}</p>
+
+							<a class="btn mb-3 bg-light" href="#">See Review</a>
+						</div>
+					</div>
+
 				</div>
 			</div>
+ 	</div>
 
 
-		</div>
-		<div class="col-md-4">
-			<div class="card">
-				<img class="imd-top" src="<?php echo base_url();?>application/Images/xbox.png">
-				<div class="card-body">
-					<h4 class="card-title">Review2</h4>
-					<p class="card-text">Get text from database</p>
-					<a href="#" class="btn btn-outline-secondary">See review</a>
-				</div>
-			</div>
 
 
-		</div>
-		<div class="col-md-4">
-			<div class="card">
-				<img class="imd-top" src="<?php echo base_url();?>application/Images/xbox.png">
-				<div class="card-body">
-					<h4 class="card-title">Review3</h4>
-					<p class="card-text">Get text from database</p>
-					<a href="#" class="btn btn-outline-secondary">See review</a>
-				</div>
-			</div>
-		</div>
+
 
 		<! --- chat room--->
 		<hr>
@@ -132,7 +129,7 @@
 					<p class="lead">To chat about the latest upcoming games in a chat room
 						click on the chat button on the right hand side which will automatically
 						take you to the directed page,
-						where you can  go and  talk about the latest game and give an honest review about the game</p>
+						where you can  go and  talk about the latest game and give an honest review about the game.</p>
 				</div>
 				<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xl-2" class="btn btn-outline-secondary btn-lg">
 					<a href="#"><button type="button" class="btn btn-outline-secondary btn-lg">Chat room</button></a>
@@ -142,30 +139,8 @@
 
 
 		<!--- Two Column Section -->
-		<div class="container-fluid padding">
-			<div class="row padding">
-				<div class="col-lg-6">
-					<h2 class="padding">Highest games Ratings</h2>
-					<hr>
 
-					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-						It has survived not only five centuries, but also the leap into electronic typesetting,
-						remaining essentially unchanged.</p>
-					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-						It has survived not only five centuries, but also the leap into electronic typesetting,
-						remaining essentially unchanged.</p>
 
-					<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xl-2" class="btn btn-outline-secondary btn-lg">
-						<a href="#"><button type="button" class="btn btn-outline-primary btn-lg">learn more</button></a>
-					</div>
-					<div class="col-lg-6">
-						<img src="<?php echo base_url();?>application/Images/xbox.png" class="img-fluid">
-					</div>
-
-				</div>
-
-			</div>
-		</div>
 
 
 		<!-- footer -->
@@ -174,8 +149,7 @@
 				<div class="row">
 					<div class="col-md-4 text-md-left">
 						<div class="py-0">
-							<h3 class="my-4 white"><span class="mx-2 font-italic text-warning"</span></h3>
-							<p class="footer-links font-weight-bold">
+ 							<p class="footer-links font-weight-bold">
 								<a class="text-white" href="#"></a>
 								<a class="text-white" href="#"></a>
 								<a class="text-white" href="#"></a>
@@ -192,11 +166,13 @@
 
 					</div>
 				</div>
-
 		</footer>
 
 
 </body>
+
+<script src="<?php echo  base_url('application/scripts/CustomVue.js')?>"></script>
+
 </html>
 
 

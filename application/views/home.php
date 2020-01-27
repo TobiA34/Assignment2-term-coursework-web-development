@@ -140,31 +140,7 @@
 		</div>
 
 
-		<!--- Two Column Section -->
-		<div class="container-fluid padding">
-			<div class="row padding">
-				<div class="col-lg-6">
-					<h2 class="padding">Highest games Ratings</h2>
-					<hr>
 
-					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-						It has survived not only five centuries, but also the leap into electronic typesetting,
-						remaining essentially unchanged.</p>
-					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-						It has survived not only five centuries, but also the leap into electronic typesetting,
-						remaining essentially unchanged.</p>
-
-					<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xl-2" class="btn btn-outline-secondary btn-lg">
-						<a href="#"><button type="button" class="btn btn-outline-primary btn-lg">learn more</button></a>
-					</div>
-					<div class="col-lg-6">
-						<img src="<?php echo base_url();?>application/Images/xbox.png" class="img-fluid">
-					</div>
-
-				</div>
-
-			</div>
-		</div>
 
 
 	<!-- footer -->

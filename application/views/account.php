@@ -32,8 +32,12 @@
 				<li class="nav-item">
 				<a  <?php echo anchor('Login/logout', 'Logout'); ?>Logout</a>
 				</li>
-
-
+				<li>
+					<label class="bg-dark">search</label>
+				</li>
+				<li>
+					<input type="text"  v-model="search" placeholder="Search games">
+				</li>
 			</ul>
 		</div>
 	</div>
