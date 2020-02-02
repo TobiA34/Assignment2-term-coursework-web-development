@@ -142,7 +142,6 @@
 
 
 
-
 	<!-- footer -->
 		<footer>
 			<div class="container">

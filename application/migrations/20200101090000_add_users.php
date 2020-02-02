@@ -53,13 +53,16 @@ class Migration_add_users extends CI_Migration{
 
 		//Create the table with the specified column
 		$this->dbforge->create_table('users');
-
 	}
+
+
+
+
 
 	// The function we call when we want to remove the table and its coulmns
 	public function down()
 	{
 		//delete the table
 		$this->dbforge->drop_table('users');
-	}
+ 	}
 }

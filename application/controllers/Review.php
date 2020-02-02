@@ -19,8 +19,10 @@ class Review extends CI_Controller
 	}
 	function reviewPage()
 	{
-		$this->load->view('review');
+		$data['result'] = $this->Review_Model->getReviews();
+		$this->load->view('review',$data);
 	}
+
 
 
 

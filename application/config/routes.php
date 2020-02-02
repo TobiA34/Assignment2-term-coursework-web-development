@@ -61,8 +61,7 @@ $route['select'] = 'Home/select';
 $route['checkLogin'] = 'Login/checkLogin';
 $route['account'] = 'Account/accountPage';
 $route['review'] = 'Review/reviewPage';
-
-$route['logOut'] = 'Login/logOut';
+ $route['logOut'] = 'Login/logOut';
 $route['buttons/:any'] = 'Home/buttons';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

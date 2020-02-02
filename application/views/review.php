@@ -26,6 +26,7 @@
 				<li class="nav-item">
 					<a class ="nav-link"a href="<?php echo base_url();?>index.php/account">Account</a>
 				</li>
+
 				<li class="nav-item">
 					<a <?php echo anchor('Login/logout', 'Logout'); ?>Logout</a>
 				</li>
@@ -95,8 +96,7 @@
 	</div>
 </div>
 
-<!--- Cards -->
-<div id="app">
+ <div id="app">
  		<div class="container-fluid padding ">
 				<div class="row padding">
 				<div class="col-md-4 mb-5" v-for="(games, index) in gameReviews" :key="index">
@@ -104,8 +104,11 @@
 					<div class="card text-center ml-9">
 						<img class="card-img-top" :src="games.image" alt="" width="100%">
 						<div class="card-block">
+							//get name from the database
 							<h4 class="card-title mt-5">{{ games.name }}</h4>
+							//get information for the database
 							<p class="card-text p-3">{{ games.information }}</p>
+							//get game console from the database
 							<p class="card-text p-3">{{ games.console }}</p>
 
 							<a class="btn mb-3 bg-light" href="#">See Review</a>
@@ -116,60 +119,56 @@
 			</div>
  	</div>
 
+	 <?php
+			  echo "Information From Database <br> <br>";
+
+	 foreach ($result as $row){
+		 ?>
+		 <tr>
+
+			 <td><?php echo $row->review_id . "."?></td>
+			 <td><?php echo $row->review . ","?></td>
+			 <td><?php echo $row->image . ","?></td>
+			 <td><?php echo $row->title. ","?></td>
+			 <td><?php echo $row->console?></td>
+		 </tr><br>
+		 <?php
+	 }
+
+	 ?>
 
 
 
+	 <!--- footer -->
 
-
-		<! --- chat room--->
-		<hr>
-		<div container-fluid>
-			<div class="row jumbotron">
-				<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-10">
-					<p class="lead">To chat about the latest upcoming games in a chat room
-						click on the chat button on the right hand side which will automatically
-						take you to the directed page,
-						where you can  go and  talk about the latest game and give an honest review about the game.</p>
+	<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4 text-md-left">
+					<div class="py-0">
+						<h3 class="my-4 white"></h3>
+						<p class="footer-links font-weight-bold">
+							<a class="text-white" href="#"></a>
+							<a class="text-white" href="#"></a>
+							<a class="text-white" href="#"></a>
+							<a class="text-white" href="#"></a>
+							<a class="text-white" href="#"></a>
+						</p>
+						<p class="text-light py-4"></p>
+					</div>
 				</div>
-				<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xl-2" class="btn btn-outline-secondary btn-lg">
-					<a href="#"><button type="button" class="btn btn-outline-secondary btn-lg">Chat room</button></a>
+				<div class="py-2 my-4">
+					<div>
+						<p><i class="fa fa-phone mx-2 "></i>&copy;6G5Z2107 - Tobi Adegoroye - 18011328 - 2019/20</p>
+					</div>
+
 				</div>
 			</div>
-		</div>
+
+	</footer>
 
 
-		<!--- Two Column Section -->
-
-
-
-
-		<!-- footer -->
-		<footer>
-			<div class="container">
-				<div class="row">
-					<div class="col-md-4 text-md-left">
-						<div class="py-0">
- 							<p class="footer-links font-weight-bold">
-								<a class="text-white" href="#"></a>
-								<a class="text-white" href="#"></a>
-								<a class="text-white" href="#"></a>
-								<a class="text-white" href="#"></a>
-								<a class="text-white" href="#"></a>
-							</p>
-							<p class="text-light py-4"></p>
-						</div>
-					</div>
-					<div class="py-2 my-4">
-						<div>
-							<p><i class="fa fa-phone mx-2 "></i>&copy;6G5Z2107 - Tobi Adegoroye - 18011328 - 2019/20</p>
-						</div>
-
-					</div>
-				</div>
-		</footer>
-
-
-</body>
+ </body>
 
 <script src="<?php echo  base_url('application/scripts/CustomVue.js')?>"></script>
 
