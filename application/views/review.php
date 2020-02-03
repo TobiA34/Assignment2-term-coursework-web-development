@@ -136,11 +136,11 @@
 <div class="container">
     <div class="row mt-5 justify-content-center">
         				<div class="card card-custom mx-2 mb-3 bg-light">
- 							<img class="mt-2" width="850px" src="{$base_url('application/' . $row->image)}"/>
+ 							<img class="mt-2 m-4" width="850px" src="{$base_url('application/' . $row->image)}"/>
    							<h4   class="card-title mt-5 text-center display-4"> $row->title</h4>
   							<p class="card-text p-3 text-center display-4">$row->review </p>
  							<p class="card-text p-3 text-center display-4">$row->console</p>
-							<a class="btn mb-3 bg-secondary" href="#">See Review</a>
+							<a class="btn mb-3 bg-secondary m-4" href="#">See Review</a>
 						</div>
 					</div>
 			</div>
@@ -160,26 +160,7 @@ function displayCards(){
 ?>
 
 
-
-<!---->
-<!--	 --><?php
-//			  echo "Information From Database <br> <br>";
-//
-//	 foreach ($result as $row){
-//		 ?>
-<!--		 <tr>-->
-<!---->
-<!--			 <td>--><?php //echo $row->review_id . "."?><!--</td>-->
-<!--			 <td>--><?php //echo $row->review . ","?><!--</td>-->
-<!--			 <img src="--><?php //echo base_url('application/' . $row->image)?><!--" alt=""/>-->
-<!--			 <td>--><?php //echo $row->title. ","?><!--</td>-->
-<!--			 <td>--><?php //echo $row->console?><!--</td>-->
-<!--		 </tr><br>-->
-<!--		 --><?php
-//	 }
-//
-//	 ?>
-
+   // 
 
 
 	 <!--- footer -->

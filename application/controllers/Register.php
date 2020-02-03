@@ -44,7 +44,7 @@ class Register extends CI_Controller
 
 		$this->Register_Model->insert_user($data);
 
-		$userDetails= array(
+		$user = array(
 			'username'  => $username,
 			'password' => $password,
 			'telephone'  => $telephone,
@@ -54,7 +54,7 @@ class Register extends CI_Controller
 			'lastname'  => $lastname,
 		);
 
-		$this->session->set_userdata($userDetails);
+		$this->session->set_userdata($user);
 
 		$this->load->view('login');
 

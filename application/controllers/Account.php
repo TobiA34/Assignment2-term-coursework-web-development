@@ -23,9 +23,8 @@ class Account extends CI_Controller
 
 	public function AccountPage()
 	{
-		//Get the information from our information model.
-		//send the information to our new view, for further information
-		$this->load->view('account');
+		//load view account
+  		$this->load->view('account');
 
 	}
 
@@ -36,7 +35,9 @@ class Account extends CI_Controller
 		$this->load->helper(array('form', 'url'));
 		$this->load->library('form_validation');
 
+		// set up session username
 		$username = $this->session->userdata('username');
+		//store function from model inside of the variable
 		$userDetails = $this->Account_Model->getAccountDetails($username);
 
 
@@ -46,29 +47,13 @@ class Account extends CI_Controller
 			echo "something found";
 		}
 
-
-
-
-
-
-
-
-
-
-
-
 		}
 
 
 	public function updateAccount(){
+		//load view update account
 		$this->load->view('updateAccount');
 	}
-
-
-
-
-
-
 
 }
 
