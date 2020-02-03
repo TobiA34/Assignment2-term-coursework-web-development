@@ -96,46 +96,89 @@
 	</div>
 </div>
 
- <div id="app">
- 		<div class="container-fluid padding ">
-				<div class="row padding">
-				<div class="col-md-4 mb-5" v-for="(games, index) in gameReviews" :key="index">
+<!-- <div id="app">-->
+<!-- 		<div class="container-fluid padding ">-->
+<!--				<div class="row padding">-->
+<!--				<div class="col-md-4 mb-5" v-for="(games, index) in gameReviews" :key="index">-->
+<!---->
+<!--					<div class="card text-center ml-9">-->
+<!--						<img class="card-img-top" :src="games.image" alt="" width="100%">-->
+<!--						<div class="card-block">-->
+<!--							//get name from the database-->
+<!--							<h4 class="card-title mt-5">{{ games.name }}</h4>-->
+<!--							//get information for the database-->
+<!--							<p class="card-text p-3">{{ games.information }}</p>-->
+<!--							//get game console from the database-->
+<!--							<p class="card-text p-3">{{ games.console }}</p>-->
+<!---->
+<!--							<a class="btn mb-3 bg-light" href="#">See Review</a>-->
+<!--						</div>-->
+<!--					</div>-->
+<!---->
+<!--				</div>-->
+<!--			</div>-->
+<!-- 	</div>-->
 
-					<div class="card text-center ml-9">
-						<img class="card-img-top" :src="games.image" alt="" width="100%">
-						<div class="card-block">
-							//get name from the database
-							<h4 class="card-title mt-5">{{ games.name }}</h4>
-							//get information for the database
-							<p class="card-text p-3">{{ games.information }}</p>
-							//get game console from the database
-							<p class="card-text p-3">{{ games.console }}</p>
 
-							<a class="btn mb-3 bg-light" href="#">See Review</a>
+
+      <?php
+
+
+	  $base_url = 'base_url';
+
+	  foreach ($result as $row) {
+
+		  $image = $row->image;
+
+
+
+		  echo <<<_END
+<div class="container">
+    <div class="row mt-5 justify-content-center">
+        				<div class="card card-custom mx-2 mb-3 bg-light">
+ 							<img class="mt-2" width="850px" src="{$base_url('application/' . $row->image)}"/>
+   							<h4   class="card-title mt-5 text-center display-4"> $row->title</h4>
+  							<p class="card-text p-3 text-center display-4">$row->review </p>
+ 							<p class="card-text p-3 text-center display-4">$row->console</p>
+							<a class="btn mb-3 bg-secondary" href="#">See Review</a>
 						</div>
 					</div>
-
-				</div>
 			</div>
- 	</div>
 
-	 <?php
-			  echo "Information From Database <br> <br>";
+_END;
 
-	 foreach ($result as $row){
-		 ?>
-		 <tr>
+	  }
+	?>
 
-			 <td><?php echo $row->review_id . "."?></td>
-			 <td><?php echo $row->review . ","?></td>
-			 <td><?php echo $row->image . ","?></td>
-			 <td><?php echo $row->title. ","?></td>
-			 <td><?php echo $row->console?></td>
-		 </tr><br>
-		 <?php
-	 }
 
-	 ?>
+<?php
+
+function displayCards(){
+
+ }
+
+?>
+
+
+
+<!---->
+<!--	 --><?php
+//			  echo "Information From Database <br> <br>";
+//
+//	 foreach ($result as $row){
+//		 ?>
+<!--		 <tr>-->
+<!---->
+<!--			 <td>--><?php //echo $row->review_id . "."?><!--</td>-->
+<!--			 <td>--><?php //echo $row->review . ","?><!--</td>-->
+<!--			 <img src="--><?php //echo base_url('application/' . $row->image)?><!--" alt=""/>-->
+<!--			 <td>--><?php //echo $row->title. ","?><!--</td>-->
+<!--			 <td>--><?php //echo $row->console?><!--</td>-->
+<!--		 </tr><br>-->
+<!--		 --><?php
+//	 }
+//
+//	 ?>
 
 
 
@@ -173,5 +216,4 @@
 <script src="<?php echo  base_url('application/scripts/CustomVue.js')?>"></script>
 
 </html>
-
 
